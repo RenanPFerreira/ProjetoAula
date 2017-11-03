@@ -114,6 +114,8 @@ namespace ProjProgVisual.Controllers
             Find(id);
             context.Categorias.Remove(categoria);
             context.SaveChanges();
+            TempData["Message"] = "Categoria " +
+                categoria.Nome.ToUpper() + " foi removido com sucesso";
             return RedirectToAction("Index");
         }
         #endregion

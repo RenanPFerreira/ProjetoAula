@@ -114,6 +114,8 @@ namespace ProjProgVisual.Controllers
             Find(id);
             context.Fabricantes.Remove(fabricante);
             context.SaveChanges();
+            TempData["Message"] = "Fabricante " +
+                fabricante.Nome.ToUpper() + " foi removido com sucesso";
             return RedirectToAction("Index");
         }
         #endregion
